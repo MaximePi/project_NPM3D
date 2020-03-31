@@ -1,0 +1,36 @@
+Namespace(add_features=True, aggregation='max', angle=0, batch_size=6, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=50, eval=False, exp_name='512maxF', grid_samp=False, k=20, lr=0.001, model='dgcnn', model_path='', momentum=0.9, no_cuda=False, num_points=512, seed=1, sigma=0, test_batch_size=6, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(add_features=True, aggregation='max', angle=0, batch_size=6, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=50, eval=False, exp_name='512maxF', grid_samp=False, k=20, lr=0.001, model='dgcnn', model_path='', momentum=0.9, no_cuda=False, num_points=512, seed=1, sigma=0, test_batch_size=6, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(add_features=True, aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=50, eval=False, exp_name='512maxF', grid_samp=False, k=20, lr=0.001, model='dgcnn', model_path='', momentum=0.9, no_cuda=False, num_points=512, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Train 0, loss: 2.699081, train acc: 0.466002, train avg acc: 0.293313
+Test 0, loss: 2.199094, test acc: 0.649109, test avg acc: 0.541948
+Train 1, loss: 2.172158, train acc: 0.648107, train avg acc: 0.475790
+Test 1, loss: 2.177035, test acc: 0.636953, test avg acc: 0.527360
+Train 2, loss: 2.062746, train acc: 0.695134, train avg acc: 0.545022
+Test 2, loss: 1.946700, test acc: 0.727310, test avg acc: 0.620355
+Train 3, loss: 1.983186, train acc: 0.729845, train avg acc: 0.588158
+Test 3, loss: 1.990767, test acc: 0.700162, test avg acc: 0.597279
+Train 4, loss: 1.937099, train acc: 0.754784, train avg acc: 0.623065
+Test 4, loss: 1.957343, test acc: 0.730551, test avg acc: 0.641337
+Train 5, loss: 1.904801, train acc: 0.763945, train avg acc: 0.639514
+Test 5, loss: 1.835472, test acc: 0.787682, test avg acc: 0.698052
+Train 6, loss: 1.867278, train acc: 0.782879, train avg acc: 0.664465
+Test 6, loss: 1.808868, test acc: 0.792950, test avg acc: 0.717035
+Train 7, loss: 1.840049, train acc: 0.790615, train avg acc: 0.682758
+Test 7, loss: 1.777213, test acc: 0.800648, test avg acc: 0.712134
+Train 8, loss: 1.821684, train acc: 0.799369, train avg acc: 0.692125
+Test 8, loss: 1.745744, test acc: 0.820502, test avg acc: 0.705570
+Train 9, loss: 1.801860, train acc: 0.803033, train avg acc: 0.697272
+Test 9, loss: 1.701298, test acc: 0.834684, test avg acc: 0.761721
+Train 10, loss: 1.789037, train acc: 0.815656, train avg acc: 0.714592
+Test 10, loss: 1.726424, test acc: 0.826985, test avg acc: 0.754581
+Train 11, loss: 1.771438, train acc: 0.817590, train avg acc: 0.718014
+Test 11, loss: 1.736909, test acc: 0.805105, test avg acc: 0.707762
+Train 12, loss: 1.760897, train acc: 0.825733, train avg acc: 0.733857
+Test 12, loss: 1.660613, test acc: 0.856564, test avg acc: 0.772872
+Train 13, loss: 1.738734, train acc: 0.833164, train avg acc: 0.742907
+Test 13, loss: 1.648343, test acc: 0.863452, test avg acc: 0.787267
+Train 14, loss: 1.741164, train acc: 0.834894, train avg acc: 0.740898
+Test 14, loss: 1.679604, test acc: 0.839546, test avg acc: 0.777140

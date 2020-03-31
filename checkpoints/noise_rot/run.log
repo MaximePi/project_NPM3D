@@ -1,0 +1,308 @@
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.001, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.153160, test avg acc: 0.111622
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.005, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.150729, test avg acc: 0.110122
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.01, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.146272, test avg acc: 0.107372
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.05, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.072123, test avg acc: 0.044500
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.1, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.046191, test avg acc: 0.028500
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.5, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=1.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=5.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040113, test avg acc: 0.024750
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=10.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040113, test avg acc: 0.024750
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=50.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.039708, test avg acc: 0.024500
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.001, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.922204, test avg acc: 0.877326
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.005, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.918558, test avg acc: 0.867407
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.01, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.913695, test avg acc: 0.854366
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.05, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.455429, test avg acc: 0.331343
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.1, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.054700, test avg acc: 0.035791
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.5, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=1.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040113, test avg acc: 0.024750
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=5.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=10.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=50.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040113, test avg acc: 0.024750
+Namespace(angle=1.6, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.153160, test avg acc: 0.111622
+Namespace(angle=3.14, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.153160, test avg acc: 0.111622
+Namespace(angle=4.71, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.153160, test avg acc: 0.111622
+Namespace(angle=5.0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.153160, test avg acc: 0.111622
+Namespace(angle=1.6, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.924230, test avg acc: 0.881616
+Namespace(angle=3.14, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.924230, test avg acc: 0.881616
+Namespace(angle=4.71, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.924230, test avg acc: 0.881616
+Namespace(angle=5.0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.924230, test avg acc: 0.881616
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.001, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.005, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.01, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.05, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.1, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.5, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=1.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=5.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=10.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=50.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.001, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.005, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.01, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.05, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.1, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.5, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=1.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=5.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=10.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=50.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=1.6, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=3.14, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=4.71, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=5.0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=1.6, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=3.14, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=4.71, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='mean', angle=5.0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.001, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.918558, test avg acc: 0.876413
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.005, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.922204, test avg acc: 0.882913
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.01, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.910454, test avg acc: 0.862959
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.05, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.398703, test avg acc: 0.280413
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.1, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.047002, test avg acc: 0.029000
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.5, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=1.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=5.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=10.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.037277, test avg acc: 0.023000
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=50.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.047812, test avg acc: 0.029703
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.001, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.924230, test avg acc: 0.879116
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.005, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.916937, test avg acc: 0.863616
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.01, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.906807, test avg acc: 0.846709
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.05, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.450972, test avg acc: 0.326599
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.1, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.055511, test avg acc: 0.036331
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.5, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=1.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.039303, test avg acc: 0.024250
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=5.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=10.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=50.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.042139, test avg acc: 0.027000
+Namespace(aggregation='max', angle=1.6, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.922204, test avg acc: 0.878866
+Namespace(aggregation='max', angle=3.14, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.922204, test avg acc: 0.878866
+Namespace(aggregation='max', angle=4.71, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.922204, test avg acc: 0.878866
+Namespace(aggregation='max', angle=5.0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.922204, test avg acc: 0.878866
+Namespace(aggregation='mean', angle=1.6, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.924230, test avg acc: 0.881616
+Namespace(aggregation='mean', angle=3.14, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.924230, test avg acc: 0.881616
+Namespace(aggregation='mean', angle=4.71, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.924230, test avg acc: 0.881616
+Namespace(aggregation='mean', angle=5.0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.924230, test avg acc: 0.881616
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.001, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.905186, test avg acc: 0.857215
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.005, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.904781, test avg acc: 0.857762
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.01, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.896272, test avg acc: 0.852221
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.05, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.391005, test avg acc: 0.285331
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.1, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.050648, test avg acc: 0.031250
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.5, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=1.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=5.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=10.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.037682, test avg acc: 0.023250
+Namespace(aggregation='max', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=50.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.049028, test avg acc: 0.030453
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.001, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.912885, test avg acc: 0.865587
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.005, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.900324, test avg acc: 0.846087
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.01, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.894652, test avg acc: 0.829587
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.05, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.449352, test avg acc: 0.332837
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.1, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.069287, test avg acc: 0.042953
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0.5, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=1.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=5.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=10.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040519, test avg acc: 0.025000
+Namespace(aggregation='mean', angle=0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=50.0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.040113, test avg acc: 0.024750
+Namespace(aggregation='max', angle=1.6, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.912885, test avg acc: 0.871337
+Namespace(aggregation='max', angle=3.14, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.909643, test avg acc: 0.861006
+Namespace(aggregation='max', angle=4.71, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.905592, test avg acc: 0.859215
+Namespace(aggregation='max', angle=5.0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.912075, test avg acc: 0.864924
+Namespace(aggregation='mean', angle=1.6, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.906807, test avg acc: 0.857715
+Namespace(aggregation='mean', angle=3.14, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.910859, test avg acc: 0.861878
+Namespace(aggregation='mean', angle=4.71, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.910454, test avg acc: 0.864256
+Namespace(aggregation='mean', angle=5.0, batch_size=32, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=True, exp_name='noise_rot', k=20, lr=0.001, model='dgcnn', model_path='checkpoints/K20_mean/models/model.t7', momentum=0.9, no_cuda=False, num_points=1024, seed=1, sigma=0, test_batch_size=16, use_sgd=True)
+Using GPU : 0 from 1 devices
+Test :: test acc: 0.905997, test avg acc: 0.856006

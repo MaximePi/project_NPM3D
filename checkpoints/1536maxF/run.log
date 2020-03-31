@@ -1,0 +1,2 @@
+Namespace(add_features=True, aggregation='max', angle=0, batch_size=6, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=50, eval=False, exp_name='1536maxF', grid_samp=False, k=20, lr=0.001, model='dgcnn', model_path='', momentum=0.9, no_cuda=False, num_points=1536, seed=1, sigma=0, test_batch_size=6, use_sgd=True)
+Using GPU : 0 from 1 devices
