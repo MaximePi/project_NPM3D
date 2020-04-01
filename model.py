@@ -305,6 +305,85 @@ class DGCNN(nn.Module):
         x = self.linear3(x)
         return x
 
+
+class DGCNN_seg(nn.Module):
+    def __init__(self, args, n_classes=10):
+        super(DGCNN_seg, self).__init__()
+        self.args = args
+        self.k = args.k
+        if self.args.add_features:
+            self.input_channels = 12
+        else:
+            self.input_channels = 6
+        self.bn1 = nn.BatchNorm2d(64)
+        self.bn2 = nn.BatchNorm2d(64)
+        self.bn3 = nn.BatchNorm2d(128)
+        self.bn4 = nn.BatchNorm2d(256)
+        self.bn5 = nn.BatchNorm1d(args.emb_dims)
+        self.bn6 = nn.BatchNorm2d(512)
+        self.bn7 = nn.BatchNorm2d(256)
+
+        self.conv1 = nn.Sequential(nn.Conv2d(self.input_channels, 64, kernel_size=1, bias=False),
+                                   self.bn1,
+                                   nn.LeakyReLU(negative_slope=0.2))
+        self.conv2 = nn.Sequential(nn.Conv2d(64*2, 64, kernel_size=1, bias=False),
+                                   self.bn2,
+                                   nn.LeakyReLU(negative_slope=0.2))
+        self.conv3 = nn.Sequential(nn.Conv2d(64*2, 128, kernel_size=1, bias=False),
+                                   self.bn3,
+                                   nn.LeakyReLU(negative_slope=0.2))
+        self.conv4 = nn.Sequential(nn.Conv2d(128*2, 256, kernel_size=1, bias=False),
+                                   self.bn4,
+                                   nn.LeakyReLU(negative_slope=0.2))
+        self.conv5 = nn.Sequential(nn.Conv1d(256, args.emb_dims, kernel_size=1, bias=False),
+                                   self.bn5,
+                                   nn.LeakyReLU(negative_slope=0.2))
+        
+
+        self.out1 = nn.Sequential(nn.Conv2d(258, 512, kernel_size=1, bias=False),
+                                   self.bn6,
+                                   nn.LeakyReLU(negative_slope=0.2))
+        self.out2 = nn.Sequential(nn.Conv2d(512, 256, kernel_size=1, bias=False),
+                                   self.bn7,
+                                   nn.LeakyReLU(negative_slope=0.2))
+        self.out3 = nn.Conv2d(256, n_classes, kernel_size=1, bias=False)
+
+
+    def forward(self, x):
+        batch_size = x.size(0)
+
+        x = get_graph_feature(x, k=self.k)
+        x = self.conv1(x)
+        x1 = x.max(dim=-1, keepdim=False)[0]
+
+        x = get_graph_feature(x1, k=self.k)
+        x = self.conv2(x)
+        x2 = x.max(dim=-1, keepdim=False)[0]
+
+        
+        x = get_graph_feature(x2, k=self.k)
+        x = self.conv3(x)
+        x3 = x.max(dim=-1, keepdim=False)[0]
+
+        
+        x_m = torch.cat((x1, x2, x3), dim=1)
+        x = self.conv5(x_m)
+        x1 = F.adaptive_max_pool2d(x, [1024,1])
+        x2 = F.adaptive_avg_pool2d(x, [1024,1])
+        x = torch.cat((x1, x2), -1)
+
+        x = torch.cat((x,x_m.transpose(2,1)),axis=-1)
+        x = x.unsqueeze(-1).transpose(2,1)
+        x = self.out1(x)
+        x = self.out2(x)
+        x = self.out3(x)
+        x = x.transpose(2,1).squeeze()  
+        
+        # pred batch_size*N_points*N_classes
+        
+        return x
+    
+
 class MoNet(nn.Module):
     def __init__(self, args, output_channels=40):
         super(MoNet, self).__init__()

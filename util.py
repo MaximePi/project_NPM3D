@@ -11,6 +11,7 @@
 import numpy as np
 import torch
 import torch.nn.functional as F
+import torch.nn as nn
 
 
 def cal_loss(pred, gold, smoothing=True):
@@ -30,6 +31,16 @@ def cal_loss(pred, gold, smoothing=True):
     else:
         loss = F.cross_entropy(pred, gold, reduction='mean')
 
+    return loss
+
+
+def loss_sem_seg(pred,label):
+    
+    # pred batch_size*N_points*N_classes
+    # label batch_size*N_points
+    
+    pred = pred.transpose(2,1)
+    loss = torch.nn.CrossEntropyLoss(pred, label, reduction='mean') # BS*C*d1 | BS*C
     return loss
 
 

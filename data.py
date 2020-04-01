@@ -15,6 +15,7 @@ import h5py
 import numpy as np
 from torch.utils.data import Dataset
 from sklearn.neighbors import KDTree
+from prep_Paris_Lille import extract_from_ply
 
 def download():
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -27,6 +28,10 @@ def download():
         os.system('wget %s; unzip %s' % (www, zipfile))
         os.system('mv %s %s' % (zipfile[:-4], DATA_DIR))
         os.system('rm %s' % (zipfile))
+
+#def download_Paris_Lille():
+#    https://cloud.mines-paristech.fr/index.php/s/JhIxgyt0ALgRZ1O/download
+#    https://cloud.mines-paristech.fr/index.php/s/JhIxgyt0ALgRZ1O/download
 
 
 def load_data(partition):
@@ -116,8 +121,6 @@ def neighborhood_PCA(query_points, cloud_points, radius):
 def compute_features(query_points, cloud_points, radius):
     eps=0.0001
     all_val, all_vect = neighborhood_PCA(query_points,cloud_points,radius)
-    N_queries = query_points.shape[0]
-
     verticality = (2/np.pi)*np.arcsin(np.abs(all_vect[:,0,2]))
     planarity = np.divide(all_val[:,1]-all_val[:,0],all_val[:,2]+eps)
     sphericity = np.divide(all_val[:,0],all_val[:,2]+eps)
@@ -166,9 +169,56 @@ class ModelNet40(Dataset):
         return self.data.shape[0]
 
 
+def load_data_Paris(num_points,grid_size,partition):
+    
+    BASE_PATH = os.getcwd()
+    DATA_PATH = os.path.join(os.path.join(BASE_PATH,'data'),'Paris_Lille')
+    
+    if partition == 'evaluate': ## no labels in evaluate
+        cloudnames = os.path.join(DATA_PATH,'test')
+        if not os.path.exists(os.path.join(cloudnames,'evaluate_ds'+'.hdf5')):
+            extract_from_ply(num_points,grid_size,DATA_PATH,partition)
+            f = h5py.File(os.path.join(cloudnames,'evaluate_ds'+'.hdf5'), 'r')    
+            all_data = f['pointclouds/'+'evaluate_clouds'][:].astype('float32')
+            return all_data, None
+        
+    cloudnames = os.path.join(DATA_PATH,'train')
+    if not os.path.exists(os.path.join(cloudnames,partition+'ing_ds'+'.hdf5')):
+        extract_from_ply(num_points,grid_size,DATA_PATH,partition)
+    f = h5py.File(os.path.join(cloudnames,partition+'ing_ds'+'.hdf5'), 'r')    
+    all_data = f['pointclouds/'+partition+'ing_clouds'][:].astype('float32')
+    all_label = f['labels/'+partition+'ing_labels'][:].astype('int64')
+    f.close()
+
+    return all_data, all_label
+
+class ParisLille(Dataset):
+    def __init__(self, num_points, grid_size, partition='train'):
+        self.data, self.label = load_data_Paris(num_points,grid_size,partition)
+        self.num_points = num_points
+        self.partition = partition        
+        
+    def __getitem__(self, item):
+
+        pointcloud = self.data[item]
+        label = self.label[item]
+
+        if self.partition == 'train':            
+            pointcloud = translate_pointcloud(pointcloud) # data augmentation
+            
+        if self.partition == 'evaluate':
+            return pointcloud
+                
+        return pointcloud, label
+
+    def __len__(self):
+        return self.data.shape[0]
+
+
 if __name__ == '__main__':
-    train = ModelNet40(1024,1,1,True,True)
-    test = ModelNet40(1024,1,1,True,True,'test')
+#    train = ModelNet40(1024,1,1,True,True)
+#    test = ModelNet40(1024,1,1,True,True,'test')
+    train = ParisLille(1024,10,'train')
     for data, label in train:
         print(data.shape)
         print(label.shape)
