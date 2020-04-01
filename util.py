@@ -34,13 +34,15 @@ def cal_loss(pred, gold, smoothing=True):
     return loss
 
 
+
 def loss_sem_seg(pred,label):
     
     # pred batch_size*N_points*N_classes
     # label batch_size*N_points
     
     pred = pred.transpose(2,1)
-    loss = torch.nn.CrossEntropyLoss(pred, label, reduction='mean') # BS*C*d1 | BS*C
+    loss = F.cross_entropy(pred, label) # BS*C*d1 | BS*C
+    
     return loss
 
 

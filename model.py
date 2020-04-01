@@ -311,10 +311,8 @@ class DGCNN_seg(nn.Module):
         super(DGCNN_seg, self).__init__()
         self.args = args
         self.k = args.k
-        if self.args.add_features:
-            self.input_channels = 12
-        else:
-            self.input_channels = 6
+
+        self.input_channels = 6
         self.bn1 = nn.BatchNorm2d(64)
         self.bn2 = nn.BatchNorm2d(64)
         self.bn3 = nn.BatchNorm2d(128)

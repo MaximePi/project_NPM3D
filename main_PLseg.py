@@ -79,17 +79,19 @@ def train(args, io):
             data = data.permute(0, 2, 1)
             batch_size = data.size()[0]
             opt.zero_grad()
-            logits = model(data)
+            logits = model(data) # batch_size*Num_points*n_classes
             loss = criterion(logits, label)
             loss.backward()
             opt.step()
-            preds = logits.max(dim=1)[1]
+            preds = logits.max(dim=-1)[1]
             count += batch_size
             train_loss += loss.item() * batch_size
-            train_true.append(label.cpu().numpy())
-            train_pred.append(preds.detach().cpu().numpy())
+            train_true.append(label.cpu().numpy().reshape(batch_size*args.num_points))
+            train_pred.append(preds.detach().cpu().numpy().reshape(batch_size*args.num_points))
+            
         train_true = np.concatenate(train_true)
         train_pred = np.concatenate(train_pred)
+
         outstr = 'Train %d, loss: %.6f, train acc: %.6f, train avg acc: %.6f' % (epoch,
                                                                                  train_loss*1.0/count,
                                                                                  metrics.accuracy_score(
@@ -112,11 +114,11 @@ def train(args, io):
             batch_size = data.size()[0]
             logits = model(data)
             loss = criterion(logits, label)
-            preds = logits.max(dim=1)[1]
+            preds = logits.max(dim=-1)[1]
             count += batch_size
             test_loss += loss.item() * batch_size
-            test_true.append(label.cpu().numpy())
-            test_pred.append(preds.detach().cpu().numpy())
+            test_true.append(label.cpu().numpy().reshape(batch_size*args.num_points))
+            test_pred.append(preds.detach().cpu().numpy().reshape(batch_size*args.num_points))
         test_true = np.concatenate(test_true)
         test_pred = np.concatenate(test_pred)
         test_acc = metrics.accuracy_score(test_true, test_pred)
@@ -173,7 +175,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Point Cloud Recognition')
     parser.add_argument('--exp_name', type=str, default='exp', metavar='N',
                         help='Name of the experiment')
-    parser.add_argument('--model', type=str, default='dgcnn', metavar='N',
+    parser.add_argument('--model', type=str, default='dgcnnseg', metavar='N',
                         choices=['pointnet','pointnetplus','dgcnn','monet','dgcnnseg'],
                         help='Model to use, [pointnet, dgcnn]')
     parser.add_argument('--dataset', type=str, default='parislille', metavar='N',
@@ -204,6 +206,7 @@ if __name__ == "__main__":
                         help='Dimension of embeddings')
     parser.add_argument('--k', type=int, default=20, metavar='N',
                         help='Num of nearest neighbors to use')
+    parser.add_argument('--grid_size', type=int, default=10)            
     parser.add_argument('--model_path', type=str, default='', metavar='N',
                         help='Pretrained model path')
     args = parser.parse_args()
