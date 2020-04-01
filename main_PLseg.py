@@ -34,9 +34,9 @@ def _init_():
 
 def train(args, io):
     
-    train_loader = DataLoader(ParisLille(num_points=args.num_points, grid_size=args.grid_size, partition='train'), num_workers=8,
+    train_loader = DataLoader(ParisLille(num_points=args.num_points, grid_size=args.grid_size, , add_features=args.add_features, partition='train'), num_workers=8,
                               batch_size=args.batch_size, shuffle=True, drop_last=True)
-    test_loader = DataLoader(ParisLille(num_points=args.num_points, grid_size=args.grid_size, partition='test'), num_workers=8,
+    test_loader = DataLoader(ParisLille(num_points=args.num_points, grid_size=args.grid_size, , add_features=args.add_features, partition='test'), num_workers=8,
                              batch_size=args.test_batch_size, shuffle=True, drop_last=False)
 
     device = torch.device("cuda" if args.cuda else "cpu")
@@ -134,7 +134,7 @@ def train(args, io):
 
 
 def test(args, io): ## écriré evaluate
-    test_loader = DataLoader(ParisLille(num_points=args.num_points, grid_size=args.grid_size, partition='train'), num_workers=8,
+    test_loader = DataLoader(ParisLille(num_points=args.num_points, grid_size=args.grid_size, , add_features=args.add_features, partition='train'), num_workers=8,
                              batch_size=args.test_batch_size, shuffle=True, drop_last=False)
 
     device = torch.device("cuda" if args.cuda else "cpu")
@@ -206,7 +206,8 @@ if __name__ == "__main__":
                         help='Dimension of embeddings')
     parser.add_argument('--k', type=int, default=20, metavar='N',
                         help='Num of nearest neighbors to use')
-    parser.add_argument('--grid_size', type=int, default=10)            
+    parser.add_argument('--grid_size', type=int, default=10)      
+    parser.add_argument('--add_features',type=bool, default=False)      
     parser.add_argument('--model_path', type=str, default='', metavar='N',
                         help='Pretrained model path')
     args = parser.parse_args()

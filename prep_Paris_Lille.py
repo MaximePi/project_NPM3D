@@ -36,8 +36,6 @@ def extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True):
             max_coord = np.max(points,axis=0)
             min_coord = np.min(points,axis=0)
             
-        
-            
             X,Y,Z = np.mgrid[int(min_coord[0]):int(max_coord[0]):grid_size,int(min_coord[1]):int(max_coord[1]):grid_size,int(min_coord[2]):int(max_coord[2]):grid_size]
             coordinates = np.stack([X.flatten(),Y.flatten(),Z.flatten()],axis=1)
             
@@ -73,14 +71,14 @@ def extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True):
         pc = f.create_group("pointclouds")
         l = f.create_group("labels")
         pc.create_dataset("training_clouds", data=X_train)
-        l.create_dataset("traisning_labels", data=y_train)
+        l.create_dataset("training_labels", data=y_train)
         f.close()
         
         f = h5py.File(os.path.join(DATA_PATH,os.path.join(partition,'testing_ds'+'.hdf5')), 'w')
         pc = f.create_group("pointclouds")
         l = f.create_group("labels")
-        pc.create_dataset("training_clouds", data=X_test)
-        l.create_dataset("traisning_labels", data=y_test)
+        pc.create_dataset("testing_clouds", data=X_test)
+        l.create_dataset("testing_labels", data=y_test)
         f.close()
         
         
@@ -95,36 +93,13 @@ def extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True):
             
             cloud_dir = os.path.join(os.path.join(DATA_PATH,'test'),cloudpoint_name)
             data = read_ply(cloud_dir)    
-            points = np.vstack((data['x'], data['y'], data['z'])).T
+            evluate_clouds.append(np.vstack((data['x'], data['y'], data['z'])).T)
 
-            max_coord = np.max(points,axis=0)
-            min_coord = np.min(points,axis=0)
             
-            X,Y,Z = np.mgrid[int(min_coord[0]):int(max_coord[0]):grid_size,int(min_coord[1]):int(max_coord[1]):grid_size,int(min_coord[2]):int(max_coord[2]):grid_size]
-            coordinates = np.stack([X.flatten(),Y.flatten(),Z.flatten()],axis=1)
-            
-            for i,coords in enumerate(coordinates):
-                x,y,z = coords
-                
-                x_ind = np.logical_and(points[:,0]>x,points[:,0]<x+grid_size)
-                y_ind = np.logical_and(points[:,1]>y,points[:,1]<y+grid_size)
-                z_ind = np.logical_and(points[:,2]>z,points[:,2]<z+grid_size)
-                
-                ind_inside = np.logical_and(np.logical_and(x_ind, y_ind), z_ind)
-                points_inside = points[ind_inside,:]
-                
-                if points_inside.shape[0]>=num_points:
-                    cube_data = points_inside
-                    np.random.shuffle(cube_data)
-                    cube_data_sampled = cube_data[:num_points,:]
-                    evluate_clouds.append(cube_data_sampled)
-        
-                if verbose and i%100==0:
-                    print(len(evluate_clouds))
 
         
-        evluate_clouds = np.stack(evluate_clouds)
-    
+        evluate_clouds = np.concatenate(evluate_clouds,axis=0)
+        print(evluate_clouds.shape)
         f = h5py.File(os.path.join(DATA_PATH,os.path.join('test','evaluate_ds'+'.hdf5')), 'w')
         pc = f.create_group("pointclouds")
         pc.create_dataset("evaluate_clouds", data=evluate_clouds)
@@ -135,6 +110,7 @@ if __name__=='__main__':
     BASE_PATH = os.getcwd()
     DATA_PATH = os.path.join(os.path.join(BASE_PATH,'data'),'Paris_Lille')
     num_points = 1024
-    grid_size = 20
+    grid_size = 10
     partition = 'train'
-    extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True)
+    #extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True)
+    extract_from_ply(num_points, grid_size, DATA_PATH, 'evaluate', verbose=True)

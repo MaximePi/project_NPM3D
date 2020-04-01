@@ -312,7 +312,11 @@ class DGCNN_seg(nn.Module):
         self.args = args
         self.k = args.k
 
-        self.input_channels = 6
+        if self.args.add_features:
+            self.input_channels = 12
+        else:
+            self.input_channels = 6
+            
         self.bn1 = nn.BatchNorm2d(64)
         self.bn2 = nn.BatchNorm2d(64)
         self.bn3 = nn.BatchNorm2d(128)

@@ -193,21 +193,31 @@ def load_data_Paris(num_points,grid_size,partition):
     return all_data, all_label
 
 class ParisLille(Dataset):
-    def __init__(self, num_points, grid_size, partition='train'):
+    def __init__(self, num_points, grid_size, add_features=False, partition='train'):
         self.data, self.label = load_data_Paris(num_points,grid_size,partition)
         self.num_points = num_points
         self.partition = partition        
-        
+        self.add_features=add_features
+
     def __getitem__(self, item):
 
         pointcloud = self.data[item]
         label = self.label[item]
 
-        if self.partition == 'train':            
-            pointcloud = translate_pointcloud(pointcloud) # data augmentation
-            
+        if self.partition == 'train':  
+            if self.add_features:
+                new_feat = compute_features(pointcloud,self.data[item], radius=1).T
+                pointcloud = translate_pointcloud(pointcloud) # data augmentation
+                pointcloud = np.concatenate((pointcloud,new_feat),axis=1)
+            else:
+                pointcloud = translate_pointcloud(pointcloud) # data augmentation
+
         if self.partition == 'evaluate':
-            return pointcloud
+            if self.add_features:
+                new_feat = compute_features(pointcloud,self.data[item], radius=1).T
+                pointcloud = np.concatenate((pointcloud,new_feat),axis=1)
+                
+        return pointcloud
                 
         return pointcloud, label
 
