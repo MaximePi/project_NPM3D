@@ -1,2 +1,0 @@
-import pytorch
-torch.cuda.empty_cache()
