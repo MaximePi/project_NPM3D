@@ -133,9 +133,9 @@ def train(args, io):
             torch.save(model.state_dict(), 'checkpoints/%s/models/model.t7' % args.exp_name)
 
 
-def test(args, io): ## écriré evaluate
-    test_loader = DataLoader(ParisLille(num_points=args.num_points, grid_size=args.grid_size, add_features=args.add_features, partition='train'), num_workers=8,
-                             batch_size=args.test_batch_size, shuffle=True, drop_last=False)
+def test(args, io): ## produce a txt file for submission on Paris Lille
+    test_loader = DataLoader(ParisLille(num_points=args.num_points, grid_size=args.grid_size, add_features=args.add_features, partition='evaluate'), num_workers=8,
+                             batch_size=args.test_batch_size, shuffle=False, drop_last=False)
 
     device = torch.device("cuda" if args.cuda else "cpu")
 
@@ -153,22 +153,17 @@ def test(args, io): ## écriré evaluate
     count = 0.0
     test_true = []
     test_pred = []
-    for data, label in test_loader:
+    for data, _ in test_loader:
 
-        data, label = data.to(device), label.to(device).squeeze()
+        data = data.to(device)
         data = data.permute(0, 2, 1)
         batch_size = data.size()[0]
         logits = model(data)
         preds = logits.max(dim=1)[1]
-        test_true.append(label.cpu().numpy())
         test_pred.append(preds.detach().cpu().numpy())
-    test_true = np.concatenate(test_true)
-    test_pred = np.concatenate(test_pred)
-    test_acc = metrics.accuracy_score(test_true, test_pred)
-    avg_per_class_acc = metrics.balanced_accuracy_score(test_true, test_pred)
-    outstr = 'Test :: test acc: %.6f, test avg acc: %.6f'%(test_acc, avg_per_class_acc)
-    io.cprint(outstr)
-
+    test_pred.append(preds.detach().cpu().numpy().reshape(batch_size*args.num_points))
+    
+    np.savetxt('submission.txt',test_pred)
 
 if __name__ == "__main__":
     # Training settings

@@ -103,7 +103,7 @@ def local_PCA(points):
     cov = np.zeros((3,3))
     cov = (points-mean).T@(points-mean)/points.shape[0]
     eigenvalues,eigenvectors = np.linalg.eig(cov)
-    eigenvalues = np.real(eigenvalues)
+    eigenvalues, eigenvectors = np.real(eigenvalues), np.real(eigenvectors)
 
     ind_s = np.argsort(eigenvalues)
     return eigenvalues[ind_s], eigenvectors[ind_s]
@@ -205,7 +205,7 @@ class ParisLille(Dataset):
         if add_features:
           self.data_with_feat = np.empty((self.data.shape[0],self.data.shape[1],self.data.shape[2]+3))
           for i in range(self.data.shape[0]):
-            new_feat = compute_features(self.data[i],self.data[i], radius=1).T
+            new_feat = compute_features(self.data[i],self.data[i], radius=0.5).T
             self.data_with_feat[i] = np.concatenate((self.data[i],new_feat),axis=1)
           self.data = self.data_with_feat.astype('float32')  
 

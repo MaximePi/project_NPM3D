@@ -322,8 +322,8 @@ class DGCNN_seg(nn.Module):
         self.bn3 = nn.BatchNorm2d(128)
         self.bn4 = nn.BatchNorm2d(256)
         self.bn5 = nn.BatchNorm1d(args.emb_dims)
-        self.bn6 = nn.BatchNorm2d(512)
-        self.bn7 = nn.BatchNorm2d(256)
+#        self.bn6 = nn.BatchNorm2d(512)
+#        self.bn7 = nn.BatchNorm2d(256)
 
         self.conv1 = nn.Sequential(nn.Conv2d(self.input_channels, 64, kernel_size=1, bias=False),
                                    self.bn1,
@@ -341,14 +341,16 @@ class DGCNN_seg(nn.Module):
                                    self.bn5,
                                    nn.LeakyReLU(negative_slope=0.2))
         
+        self.dp1 = nn.Dropout(p=args.dropout)
+        self.dp2 = nn.Dropout(p=args.dropout)
 
-        self.out1 = nn.Sequential(nn.Conv2d(258, 512, kernel_size=1, bias=False),
-                                   self.bn6,
+        self.out1 = nn.Sequential(nn.Conv1d(258, 256, kernel_size=1, bias=False),
+#                                   self.bn6,
                                    nn.LeakyReLU(negative_slope=0.2))
-        self.out2 = nn.Sequential(nn.Conv2d(512, 256, kernel_size=1, bias=False),
-                                   self.bn7,
+        self.out2 = nn.Sequential(nn.Conv1d(256, 256, kernel_size=1, bias=False),
+#                                   self.bn7,
                                    nn.LeakyReLU(negative_slope=0.2))
-        self.out3 = nn.Conv2d(256, n_classes, kernel_size=1, bias=False)
+        self.out3 = nn.Conv1d(256, n_classes, kernel_size=1, bias=False)
 
 
     def forward(self, x):
@@ -375,9 +377,12 @@ class DGCNN_seg(nn.Module):
         x = torch.cat((x1, x2), -1)
 
         x = torch.cat((x,x_m.transpose(2,1)),axis=-1)
-        x = x.unsqueeze(-1).transpose(2,1)
+        x = x.transpose(2,1)
+        #x = x.unsqueeze(-1).transpose(2,1)
         x = self.out1(x)
+        x = self.dp1(x)
         x = self.out2(x)
+        x = self.dp2(x)
         x = self.out3(x)
         x = x.transpose(2,1).squeeze()  
         
