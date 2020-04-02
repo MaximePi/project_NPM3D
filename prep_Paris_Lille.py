@@ -109,8 +109,8 @@ def extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True):
 if __name__=='__main__':
     BASE_PATH = os.getcwd()
     DATA_PATH = os.path.join(os.path.join(BASE_PATH,'data'),'Paris_Lille')
-    num_points = 1024
-    grid_size = 10
+    num_points = 2048
+    grid_size = 1
     partition = 'train'
-    #extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True)
-    extract_from_ply(num_points, grid_size, DATA_PATH, 'evaluate', verbose=True)
+    extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True)
+    #extract_from_ply(num_points, grid_size, DATA_PATH, 'evaluate', verbose=True)

@@ -103,6 +103,8 @@ def local_PCA(points):
     cov = np.zeros((3,3))
     cov = (points-mean).T@(points-mean)/points.shape[0]
     eigenvalues,eigenvectors = np.linalg.eig(cov)
+    eigenvalues = np.real(eigenvalues)
+
     ind_s = np.argsort(eigenvalues)
     return eigenvalues[ind_s], eigenvectors[ind_s]
 
@@ -145,12 +147,13 @@ class ModelNet40(Dataset):
         label = self.label[item]
 
         if self.partition == 'train':
-            
-            pointcloud = translate_pointcloud(pointcloud)
             np.random.shuffle(pointcloud)
             if self.add_features:
-                new_feat = compute_features(pointcloud,self.data[item], radius=0.3).T
+                new_feat = compute_features(pointcloud,self.data[item], radius=1).T
+                pointcloud = translate_pointcloud(pointcloud) # data augmentation
                 pointcloud = np.concatenate((pointcloud,new_feat),axis=1)
+            else:
+                pointcloud = translate_pointcloud(pointcloud) # data augmentation
                 
         if self.partition == 'test':
             if self.add_features:
@@ -192,12 +195,19 @@ def load_data_Paris(num_points,grid_size,partition):
 
     return all_data, all_label
 
+
 class ParisLille(Dataset):
     def __init__(self, num_points, grid_size, add_features=False, partition='train'):
         self.data, self.label = load_data_Paris(num_points,grid_size,partition)
         self.num_points = num_points
-        self.partition = partition        
-        self.add_features=add_features
+        self.partition = partition
+        self.add_features = add_features
+        if add_features:
+          self.data_with_feat = np.empty((self.data.shape[0],self.data.shape[1],self.data.shape[2]+3))
+          for i in range(self.data.shape[0]):
+            new_feat = compute_features(self.data[i],self.data[i], radius=1).T
+            self.data_with_feat[i] = np.concatenate((self.data[i],new_feat),axis=1)
+          self.data = self.data_with_feat.astype('float32')  
 
     def __getitem__(self, item):
 
@@ -205,25 +215,27 @@ class ParisLille(Dataset):
         label = self.label[item]
 
         if self.partition == 'train':  
+            np.random.shuffle(pointcloud)
             if self.add_features:
-                new_feat = compute_features(pointcloud,self.data[item], radius=1).T
+                pointcloud[:,:3] = translate_pointcloud(pointcloud[:,:3]) # data augmentation
+            else:
                 pointcloud = translate_pointcloud(pointcloud) # data augmentation
-                pointcloud = np.concatenate((pointcloud,new_feat),axis=1)
+                
+        if self.partition == 'test':
+            if self.add_features:
+                pointcloud[:,:3] = translate_pointcloud(pointcloud[:,:3]) # data augmentation
             else:
                 pointcloud = translate_pointcloud(pointcloud) # data augmentation
 
         if self.partition == 'evaluate':
-            if self.add_features:
-                new_feat = compute_features(pointcloud,self.data[item], radius=1).T
-                pointcloud = np.concatenate((pointcloud,new_feat),axis=1)
-                
-        return pointcloud
+          if self.add_features:
+              pointcloud = np.concatenate((pointcloud,new_feat),axis=1)      
+          return pointcloud
                 
         return pointcloud, label
 
     def __len__(self):
         return self.data.shape[0]
-
 
 if __name__ == '__main__':
 #    train = ModelNet40(1024,1,1,True,True)
