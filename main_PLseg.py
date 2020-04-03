@@ -149,9 +149,6 @@ def test(args, io): ## produce a txt file for submission on Paris Lille
     model = nn.DataParallel(model)
     model.load_state_dict(torch.load(args.model_path))
     model = model.eval()
-    test_acc = 0.0
-    count = 0.0
-    test_true = []
     test_pred = []
     for data, _ in test_loader:
 
@@ -159,10 +156,10 @@ def test(args, io): ## produce a txt file for submission on Paris Lille
         data = data.permute(0, 2, 1)
         batch_size = data.size()[0]
         logits = model(data)
-        preds = logits.max(dim=1)[1]
-        test_pred.append(preds.detach().cpu().numpy())
-    test_pred.append(preds.detach().cpu().numpy().reshape(batch_size*args.num_points))
+        preds = logits.max(dim=-1)[1]
+        test_pred.append(preds.detach().cpu().numpy().reshape(batch_size*args.num_points))
     
+    test_pred = np.stack(test_pred).flatten()
     np.savetxt('submission.txt',test_pred)
 
 if __name__ == "__main__":

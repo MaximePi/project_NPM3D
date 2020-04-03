@@ -355,7 +355,7 @@ class DGCNN_seg(nn.Module):
 
     def forward(self, x):
         batch_size = x.size(0)
-        num_points = x.size(-2)
+        n_points = x.size(-1)
         x = get_graph_feature(x, k=self.k)
         x = self.conv1(x)
         x1 = x.max(dim=-1, keepdim=False)[0]
@@ -372,8 +372,8 @@ class DGCNN_seg(nn.Module):
         
         x_m = torch.cat((x1, x2, x3), dim=1)
         x = self.conv5(x_m)
-        x1 = F.adaptive_max_pool2d(x, [num_points,1])
-        x2 = F.adaptive_avg_pool2d(x, [num_points,1])
+        x1 = F.adaptive_max_pool2d(x, [n_points,1])
+        x2 = F.adaptive_avg_pool2d(x, [n_points,1])
         x = torch.cat((x1, x2), -1)
 
         x = torch.cat((x,x_m.transpose(2,1)),axis=-1)
@@ -385,7 +385,7 @@ class DGCNN_seg(nn.Module):
         x = self.dp2(x)
         x = self.out3(x)
         x = x.transpose(2,1).squeeze()  
-        
+        x = x.max(dim=-1)[1]
         # pred batch_size*N_points*N_classes
         
         return x

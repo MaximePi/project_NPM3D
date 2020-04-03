@@ -86,25 +86,29 @@ def extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True):
         data_test = os.listdir(os.path.join(DATA_PATH,'test'))
         data_test = [c for c in data_test if c[-3:]=='ply']
         
-        evluate_clouds = []
+        evaluate_clouds = []
                 
         for cloudpoint_name in data_test:
             print(cloudpoint_name)
             
             cloud_dir = os.path.join(os.path.join(DATA_PATH,'test'),cloudpoint_name)
             data = read_ply(cloud_dir)    
-            evluate_clouds.append(np.vstack((data['x'], data['y'], data['z'])).T)
+            evaluate_clouds.append(np.vstack((data['x'], data['y'], data['z'])).T)
 
             
 
         
-        evluate_clouds = np.concatenate(evluate_clouds,axis=0)
-        print(evluate_clouds.shape)
+        evaluate_clouds = np.concatenate(evaluate_clouds,axis=0)
+        num = evaluate_clouds.shape[0]//num_points
+        evaluate_clouds_3D = evaluate_clouds[:(num*num_points),:].reshape(num,num_points,3)
+        A = np.concatenate((evaluate_clouds[(num*num_points):,:],np.zeros((2048-(evaluate_clouds.shape[0]-num*num_points),3))),axis=0) ## padding with zeros to form 2048 points cloud
+        eva_rest = np.expand_dims(A,axis=0)
+        evaluate_clouds = np.concatenate((evaluate_clouds_3D,eva_rest))
         f = h5py.File(os.path.join(DATA_PATH,os.path.join('test','evaluate_ds'+'.hdf5')), 'w')
         pc = f.create_group("pointclouds")
-        pc.create_dataset("evaluate_clouds", data=evluate_clouds)
+        pc.create_dataset("evaluate_clouds", data=evaluate_clouds)
         f.close()
-        
+#        
         
 if __name__=='__main__':
     BASE_PATH = os.getcwd()
@@ -112,5 +116,5 @@ if __name__=='__main__':
     num_points = 2048
     grid_size = 5
     partition = 'train'
-    extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True)
-    #extract_from_ply(num_points, grid_size, DATA_PATH, 'evaluate', verbose=True)
+    #extract_from_ply(num_points, grid_size, DATA_PATH, partition, verbose=True)
+    extract_from_ply(num_points, grid_size, DATA_PATH, 'evaluate', verbose=True)

@@ -181,9 +181,9 @@ def load_data_Paris(num_points,grid_size,partition):
         cloudnames = os.path.join(DATA_PATH,'test')
         if not os.path.exists(os.path.join(cloudnames,'evaluate_ds'+'.hdf5')):
             extract_from_ply(num_points,grid_size,DATA_PATH,partition)
-        f = h5py.File(os.path.join(cloudnames,'evaluate_ds'+'.hdf5'), 'r')    
-        all_data = f['pointclouds/'+'evaluate_clouds'][:].astype('float32')
-        return all_data, None
+            f = h5py.File(os.path.join(cloudnames,'evaluate_ds'+'.hdf5'), 'r')    
+            all_data = f['pointclouds/'+'evaluate_clouds'][:].astype('float32')
+            return all_data, None
         
     cloudnames = os.path.join(DATA_PATH,'train')
     if not os.path.exists(os.path.join(cloudnames,partition+'ing_ds'+'.hdf5')):
@@ -230,7 +230,7 @@ class ParisLille(Dataset):
         if self.partition == 'evaluate':
           if self.add_features:
               pointcloud = np.concatenate((pointcloud,new_feat),axis=1)      
-          return pointcloud, label
+          return pointcloud
                 
         return pointcloud, label
 
