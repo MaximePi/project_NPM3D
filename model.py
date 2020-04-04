@@ -355,7 +355,7 @@ class DGCNN_seg(nn.Module):
 
     def forward(self, x):
         batch_size = x.size(0)
-        num_points = x.size(-2)
+        num_points = x.size(-1)
         x = get_graph_feature(x, k=self.k)
         x = self.conv1(x)
         x1 = x.max(dim=-1, keepdim=False)[0]
